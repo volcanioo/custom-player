@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <script type="text/javascript" src="//cdn.bitmovin.com/player/web/8/bitmovinplayer.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdna0.trtarabi.com/public/fonts/fontawesome/css/all.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+<body>
+    <style>
+        #player-fixed.full #my-player {
+            position: fixed;
+            width: 100%;
+            max-width: 100%;
+            padding: 0 !important;
+            left: 0;
+            top: 0;
+            z-index: 9999;
+        }
+        div#player-fixed.full .player-buttons {
+            position: fixed;
+            z-index: 99999;
+            left: 0;
+            bottom: 0;
+        }
+    </style>
+    <div class="container" id="player-fixed">
+        <div class="col-md-12">
+            <div id="my-player" style="width: 100%;"></div>
+        </div>
+        <div class="clear" style="height: 25px;"></div>
+        <div class="col-md-12 row player-buttons">
+            <div id="my-player-actions" class="col-md-6">
+                <div class="card" style="width: 100%;">
+                    <div class="card-body">
+                        <h5 class="card-title">Video Actions</h5>
+                        <p style="margin: -10px 0 5px 0;font-size: 10px;opacity: .4;">do something</p>
+                        <button onclick="PlayerPlay()" class="btn btn-primary"> <i class="far fa-play"></i> Play</button>
+                        <button onclick="PlayerPause()" class="btn btn-primary"> <i class="far fa-pause"></i> Pause</button>
+                        <button onclick="PlayerFullScreen()" class="btn btn-primary"> <i class="far fa-compress"></i> Full Screen</button>
+                        <div class="clear" style="height: 5px;"></div>
+                        <button onclick="PlayerCustomFullScreen()" class="btn btn-danger"> <i class="far fa-compress"></i> (Custom) Full Screen</button>
+                        <div class="clear" style="height: 5px;"></div>
+                        <button onclick="PlayerMute()" class="btn btn-primary"> <i class="fal fa-volume-slash"></i> Mute</button>
+                        <button onclick="PlayerUnmute()" class="btn btn-primary"> <i class="fal fa-volume"></i> Unmute</button>
+                        <div class="clear" style="height: 5px;"></div>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Video Kalitesi: <span id="currentQuality"></span>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="listOfQualities">
+                            </div>
+                        </div>
+                        <div class="clear" style="height: 5px;"></div>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Video Hizi: <span id="currentSpeed"></span>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="listSpeed">
+                                <a class="dropdown-item" onclick="setSpeed(this)" data-id="0.25" href="javascript:;">0.25x</a>
+                                <a class="dropdown-item" onclick="setSpeed(this)" data-id="0.50" href="javascript:;">0.5x</a>
+                                <a class="dropdown-item" onclick="setSpeed(this)" data-id="1.0" href="javascript:;">0</a>
+                                <a class="dropdown-item" onclick="setSpeed(this)" data-id="1.5" href="javascript:;">1.5x</a>
+                                <a class="dropdown-item" onclick="setSpeed(this)" data-id="2.0" href="javascript:;">2x</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="my-player-infos" class="col-md-6">
+                <div class="card" style="width: 100%;">
+                    <div class="card-body">
+                        <h5 class="card-title">Video Status</h5>
+                        <p style="margin: -10px 0 5px 0;font-size: 10px;opacity: .4;">do something</p>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon3">Current Time</span>
+                            </div>
+                            <input type="text" class="form-control" disabled id="currentTimeOfVideo" id="basic-url" aria-describedby="basic-addon3">
+                        </div>
+                        <div class="input-group">
+                            <label for="customRange1">Volume</label>
+                            <input type="range" class="custom-range" onchange="setVolume(this)" value="29" id="volume">
+                        </div>
+                        <div class="input-group">
+                            <label for="customRange1">Timer</label>
+                            <input type="range" class="custom-range" onchange="setTime(this)" value="29" id="timer">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+
+        /*
+         *************************************************
+         ** ---- PLAYER CONFIGRATION
+         *************************************************
+         */
+        const container = document.getElementById('my-player');
+        const playerConfig = {
+            key: 'ebcef1eb-ee99-4179-9643-08c416004724',
+            ui: false
+        };
+        const source = {
+            title: "Getting Started with the Bitmovin Player",
+            description: "Now you are ready to embed the Bitmovin Player into your own website :)",
+            dash: 'https://bitmovin-a.akamaihd.net/content/MI201109210084_1/mpds/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.mpd',
+            hls: 'https://bitmovin-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8',
+            progressive: 'https://bitmovin-a.akamaihd.net/content/MI201109210084_1/MI201109210084_mpeg-4_hd_high_1080p25_10mbits.mp4',
+            poster: 'https://bitmovin-a.akamaihd.net/content/MI201109210084_1/poster.jpg'
+        };
+        const player = new bitmovin.player.Player(container, playerConfig);
+        player.load(source).then(
+            player => {
+                console.log('Successfully created Bitmovin Player instance')
+            },
+            reason => {
+                console.log('Error while creating Bitmovin Player instance')
+            },
+        );
+        player.on(bitmovin.player.PlayerEvent.VolumeChanged, getVolume);
+
+
+        function hasClass(elem, className) {
+            return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
+        }
+
+        /*
+         *************************************************
+         ** ---- ACTIONS
+         *************************************************
+         */
+        function PlayerPlay() {
+            player.play();
+        }
+        function PlayerPause() {
+            player.pause();
+        }
+        function PlayerFullScreen() {
+            player.setViewMode('fullscreen');
+        }
+        function PlayerMute() {
+            player.mute();
+        }
+        function PlayerUnmute() {
+            player.unmute();
+        }
+        function PlayerCustomFullScreen() {
+            let element = document.getElementsByTagName('body')[0];
+            if (!hasClass(document.getElementById('player-fixed'), 'full')) {
+                document.getElementById('player-fixed').classList.add('full');
+                if(element.requestFullscreen)
+                    element.requestFullscreen();
+                else if(element.mozRequestFullScreen)
+                    element.mozRequestFullScreen();
+                else if(element.webkitRequestFullscreen)
+                    element.webkitRequestFullscreen();
+                else if(element.msRequestFullscreen)
+                    element.msRequestFullscreen();
+            } else {
+                document.getElementById('player-fixed').classList.remove('full');
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.mozCancelFullScreen) { /* Firefox */
+                    document.mozCancelFullScreen();
+                } else if (document.webkitExitFullscreen) { /* Chrome, Safari and Opera */
+                    document.webkitExitFullscreen();
+                } else if (document.msExitFullscreen) { /* IE/Edge */
+                    document.msExitFullscreen();
+                }
+            }
+        }
+
+        /*
+         *************************************************
+         ** ---- SETTERS
+         *************************************************
+         */
+        function setTime(e) {
+            player.seek(player.getDuration()/100*e.value);
+        }
+        function setVolume(e) {
+            player.setVolume(e.value);
+        }
+        function setQualityOfVideo(quality_id) {
+            player.setVideoQuality(quality_id.toString());
+        }
+        function setPlaybackSpeed(quality_id) {
+            player.setPlaybackSpeed(quality_id);
+        }
+
+
+        /*
+         *************************************************
+         ** ---- GETTERS
+         *************************************************
+         */
+        function getTime() {
+            const currentDuration = player.getCurrentTime();
+            let second = currentDuration.toString().split('.')[0] % 60;
+            let minute = (currentDuration.toString().split('.')[0] / 60).toString().split('.')[0];
+            second.toString().length == 1 ? second = '0' + second.toString() : second = second;
+            minute.toString().length == 1 ? minute = '0' + minute.toString() : minute = minute;
+            return `${minute}:${second}`;
+        }
+        function getVolume() {
+            return player.getVolume();
+        }
+        function getVideoQualities() {
+            return player.getAvailableVideoQualities();
+        }
+        function getVideoCurrentQuality() {
+            return player.getVideoQuality();
+        }
+        function getVideoCurrentSpeed() {
+            return player.getPlaybackSpeed();
+        }
+
+
+        /*
+         *************************************************
+         ** ---- WORK
+         *************************************************
+         */
+        setInterval(function() {
+
+            // Current Time
+            document.getElementById('currentTimeOfVideo').value = getTime();
+
+            // Current Volume
+            document.getElementById('volume').value = getVolume();
+
+            // Current Timer
+            document.getElementById('timer').value = player.getCurrentTime()/player.getDuration()*100;
+
+            // Qualities Listing
+            document.getElementById('listOfQualities').innerHTML = '';
+            for (let i = 0; i < getVideoQualities().length; i++) {
+                document.getElementById('listOfQualities').innerHTML += '<a class="dropdown-item" onclick="setQuality(this)" data-id="'+ getVideoQualities()[i].id +'" href="javascript:;">'+ getVideoQualities()[i].label +'</a>';
+            }
+
+            // Current Quality
+            document.getElementById('currentQuality').innerHTML = getVideoCurrentQuality().label ? getVideoCurrentQuality().label : getVideoCurrentQuality().id;
+
+            // Current Speed
+            document.getElementById('currentSpeed').innerHTML = getVideoCurrentSpeed();
+
+        }, 1000);
+
+        // Change of Quality
+        function setQuality(x) {
+            setQualityOfVideo(x.getAttribute('data-id'))
+        }
+
+        // Change of Speed
+        function setSpeed(x) {
+            setPlaybackSpeed(x.getAttribute('data-id'))
+        }
+
+
+    </script>
+</body>
+</html>

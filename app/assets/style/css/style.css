@@ -1,0 +1,667 @@
+body,
+html,
+p,
+figure {
+  margin: 0;
+  padding: 0;
+  font-family: "Proxima Nova Cn Lt"; }
+
+body {
+  overflow-x: hidden; }
+
+ul,
+ol {
+  list-style-type: none;
+  padding: 0; }
+
+button,
+a {
+  cursor: pointer;
+  text-decoration: none; }
+
+.no-margin {
+  margin: 0 !important; }
+
+.no-padding {
+  padding: 0 !important; }
+
+.float-right {
+  margin-left: auto;
+  margin-right: 0; }
+
+.float-left {
+  margin-right: auto;
+  margin-left: 0; }
+
+* {
+  outline: none;
+  box-sizing: border-box; }
+
+img[alt=""] {
+  border: 2px solid red; }
+
+.full-image img {
+  display: block;
+  width: 100%;
+  height: auto; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0; }
+
+.component-title {
+  font-size: 36px;
+  display: block; }
+  .component-title span {
+    font-family: 'Proxima Nova Cn Rg';
+    font-weight: 400; }
+
+.component-percantage {
+  font-size: 28px;
+  display: block;
+  font-weight: 600; }
+  .component-percantage .percantange {
+    width: 60px;
+    position: relative; }
+    .component-percantage .percantange i {
+      height: 5px;
+      background: #63e17d;
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      display: block; }
+
+.component-tab {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .component-tab strong {
+    font-family: 'Proxima Nova Cn Rg';
+    font-weight: 500;
+    font-size: 18px;
+    text-align: right; }
+  .component-tab .tabs {
+    flex: 0 0 80%;
+    background: #efefef;
+    height: 50px;
+    margin-left: 3%;
+    padding: 7px;
+    display: flex;
+    flex-direction: row; }
+    .component-tab .tabs button {
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 50%;
+      font-family: 'Proxima Nova Cn Rg';
+      cursor: pointer;
+      border: none;
+      background: transparent;
+      color: #9b9b9b;
+      font-size: 18px; }
+      .component-tab .tabs button.active {
+        color: #141414;
+        background: white; }
+
+.component-parties-list-horizontal .alliance .row {
+  background: #f5f5f5;
+  padding: 10px;
+  margin: 0;
+  border: 3px solid #979797; }
+  .component-parties-list-horizontal .alliance .row .title-of-alliance {
+    flex-direction: column;
+    display: flex;
+    justify-content: center; }
+    .component-parties-list-horizontal .alliance .row .title-of-alliance span, .component-parties-list-horizontal .alliance .row .title-of-alliance strong {
+      text-align: center; }
+    .component-parties-list-horizontal .alliance .row .title-of-alliance strong {
+      font-size: 20px; }
+    .component-parties-list-horizontal .alliance .row .title-of-alliance span {
+      font-size: 26px;
+      font-weight: 600; }
+
+.component-parties-list-horizontal .alliance.-no-color .row {
+  border-color: rgba(0, 0, 0, 0);
+  border-left: 0;
+  border-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+  background: transparent; }
+
+.component-parties-list-horizontal div[data-party] {
+  display: flex;
+  flex-direction: column; }
+  .component-parties-list-horizontal div[data-party] strong {
+    background: #353637;
+    font-size: 30px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    font-family: 'Proxima Nova Cn Lt'; }
+  .component-parties-list-horizontal div[data-party] span {
+    background: #ededed;
+    font-size: 30px;
+    color: black;
+    display: flex;
+    font-weight: 600;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    font-family: 'Proxima Nova Cn Lt'; }
+  .component-parties-list-horizontal div[data-party][data-party=akp] strong {
+    background: #e39003; }
+  .component-parties-list-horizontal div[data-party][data-party=mhp] strong {
+    background: #e70000; }
+  .component-parties-list-horizontal div[data-party][data-party=chp] strong {
+    background: #a20200; }
+  .component-parties-list-horizontal div[data-party][data-party=ip] strong {
+    background: #53b5e3; }
+  .component-parties-list-horizontal div[data-party][data-party=hdp] strong {
+    background: #5301ad; }
+
+.component-parties-list-horizontal.minimal div[data-party] strong {
+  font-size: 21px; }
+
+.component-parties-list-horizontal.minimal div[data-party] span {
+  font-size: 24px; }
+
+.component-parties-list-vertical.custom-template .col-md-7 {
+  padding: 20px;
+  border: 1px solid #979797; }
+
+.component-parties-list-vertical.custom-template .col-md-4 {
+  padding: 20px;
+  border: 1px solid #979797; }
+  .component-parties-list-vertical.custom-template .col-md-4 .row-of-list {
+    background: transparent; }
+
+.component-parties-list-vertical.custom-template .percantange-of-party span {
+  background: #b3b8c3; }
+
+.component-parties-list-vertical.custom-template .percantange-of-party strong {
+  background: transparent !important; }
+
+.component-parties-list-vertical .head-title {
+  font-size: 22px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .component-parties-list-vertical .head-title.long {
+    white-space: nowrap;
+    position: relative;
+    left: 10px; }
+
+.component-parties-list-vertical .alliance-title {
+  display: none; }
+
+.component-parties-list-vertical.alliance-open .alliance {
+  padding: 20px;
+  margin-top: 20px;
+  border: 3px solid #979797; }
+
+.component-parties-list-vertical.alliance-open .alliance-title {
+  display: flex; }
+
+.component-parties-list-vertical .row-of-list {
+  background: #efefef;
+  height: 43px;
+  margin-top: 10px; }
+  .component-parties-list-vertical .row-of-list .col-md-4 {
+    background: white;
+    justify-content: flex-start; }
+  .component-parties-list-vertical .row-of-list .col-xs-3, .component-parties-list-vertical .row-of-list .col-xs {
+    display: flex;
+    align-items: center;
+    height: 43px;
+    flex-direction: row;
+    font-size: 24px;
+    font-weight: 600; }
+    .component-parties-list-vertical .row-of-list .col-xs-3 img, .component-parties-list-vertical .row-of-list .col-xs img {
+      margin-right: 5px; }
+  .component-parties-list-vertical .row-of-list .col-xs {
+    justify-content: center; }
+  .component-parties-list-vertical .row-of-list .percantange-of-party {
+    display: flex;
+    flex-direction: row;
+    padding-left: 14px; }
+    .component-parties-list-vertical .row-of-list .percantange-of-party strong {
+      height: 43px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 30%;
+      background: #efefef;
+      font-weight: bold;
+      font-size: 20px; }
+    .component-parties-list-vertical .row-of-list .percantange-of-party span {
+      flex: 0 0 70%; }
+      .component-parties-list-vertical .row-of-list .percantange-of-party span i {
+        display: block;
+        height: 43px;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 43px;
+        padding: 0;
+        background: #353637;
+        position: relative;
+        font-style: normal; }
+        .component-parties-list-vertical .row-of-list .percantange-of-party span i span {
+          position: absolute;
+          height: 20px;
+          font-size: 11px;
+          background: #efefef;
+          padding: 0 8px;
+          line-height: 20px;
+          right: -45px;
+          width: 50px;
+          text-align: center;
+          top: 10px;
+          color: black; }
+  .component-parties-list-vertical .row-of-list[data-party=akp] i {
+    background: #e39003 !important; }
+  .component-parties-list-vertical .row-of-list[data-party=mhp] i {
+    background: #e70000 !important; }
+  .component-parties-list-vertical .row-of-list[data-party=chp] i {
+    background: #a20200 !important; }
+  .component-parties-list-vertical .row-of-list[data-party=ip] i {
+    background: #53b5e3 !important; }
+  .component-parties-list-vertical .row-of-list[data-party=sp] i {
+    background: #7a7b7c !important; }
+  .component-parties-list-vertical .row-of-list[data-party=hdp] i {
+    background: #5301ad !important; }
+
+.component-parties-list-vertical .custom-percantange .head-title {
+  font-size: 20px;
+  justify-content: flex-start;
+  padding-left: 8px; }
+
+.table tr:hover {
+  background: whitesmoke; }
+
+.table .table-desc {
+  display: block;
+  margin-top: 32px;
+  color: #757575;
+  font-size: 18px;
+  margin-bottom: 11px; }
+
+.table .align-left * {
+  text-align: left;
+  padding-left: 10px; }
+
+.table table {
+  width: 100%;
+  border-collapse: collapse; }
+  .table table th {
+    font-size: 20px;
+    color: #474747;
+    height: 35px;
+    font-weight: 600;
+    border-right: 1px solid #dedede;
+    border-bottom: 1px solid #dedede; }
+    .table table th:first-child {
+      border-right-width: 3px;
+      border-right-color: #8f9194;
+      text-align: left;
+      padding-left: 10px; }
+    .table table th.akp {
+      border-bottom-color: #e39003 !important;
+      border-bottom-width: 5px; }
+    .table table th.mhp {
+      border-bottom-color: #e70000 !important;
+      border-bottom-width: 5px; }
+    .table table th.chp {
+      border-bottom-color: #a20200 !important;
+      border-bottom-width: 5px; }
+    .table table th.ip {
+      border-bottom-color: #53b5e3 !important;
+      border-bottom-width: 5px; }
+    .table table th.hdp {
+      border-bottom-color: #5301ad !important;
+      border-bottom-width: 5px; }
+    .table table th.other {
+      border-bottom-color: #353637 !important;
+      border-bottom-width: 5px; }
+  .table table tr td {
+    font-size: 20px;
+    color: #4e5d77;
+    height: 35px;
+    font-weight: 600;
+    border-right: 1px solid #dedede;
+    border-bottom: 1px solid #dedede;
+    text-align: center; }
+    .table table tr td:first-child {
+      border-right-width: 3px;
+      border-right-color: #8f9194;
+      text-align: left;
+      color: #3a75b4;
+      padding-left: 10px; }
+    .table table tr td.district {
+      padding-left: 35px; }
+  .table table tr.akp td:nth-child(2) {
+    background: #e39003 !important;
+    color: white; }
+  .table table tr.mhp td:nth-child(3) {
+    background: #e70000 !important;
+    color: white; }
+  .table table tr.chp td:nth-child(4) {
+    background: #a20200 !important;
+    color: white; }
+  .table table tr.ip td:nth-child(5) {
+    background: #53b5e3 !important;
+    color: white; }
+  .table table tr.hdp td:nth-child(6) {
+    background: #5301ad !important;
+    color: white; }
+
+.table .table-shower {
+  margin: 40px auto;
+  font-size: 25px;
+  display: block;
+  background: transparent;
+  border: none;
+  font-weight: 600;
+  font-family: inherit; }
+  .table .table-shower i {
+    font-weight: 600;
+    color: #4e5d77;
+    opacity: .5;
+    margin-left: 4px; }
+
+body {
+  background: url("../../images/bg-pattern.jpg") repeat-y;
+  background-size: 100% auto; }
+
+main {
+  padding: 20px;
+  min-height: 100vh;
+  background: white; }
+
+.container {
+  max-width: 1090px; }
+
+hr {
+  border: none;
+  height: 1px;
+  background: #979797;
+  margin-top: 45px;
+  margin-bottom: 38px; }
+
+#header,
+#footer {
+  height: 80px;
+  display: flex;
+  align-items: center; }
+  #header .header--motto,
+  #footer .header--motto {
+    display: flex;
+    align-items: center;
+    font-size: 28px; }
+    #header .header--motto strong,
+    #footer .header--motto strong {
+      margin-right: 7px;
+      padding-left: 23px; }
+    #header .header--motto span,
+    #footer .header--motto span {
+      font-family: "Proxima Nova Cn Th"; }
+  #header .header--social,
+  #footer .header--social {
+    display: flex;
+    align-items: center; }
+    #header .header--social a:not(.live-button),
+    #footer .header--social a:not(.live-button) {
+      color: #585d73;
+      font-size: 25px;
+      margin-right: 0;
+      margin-left: auto;
+      margin-right: 20px; }
+    #header .header--social .live-button,
+    #footer .header--social .live-button {
+      height: 30px;
+      background: #c31719;
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+      border-radius: 4px;
+      margin-right: 0;
+      margin-left: auto;
+      color: white;
+      font-weight: bold; }
+      #header .header--social .live-button i,
+      #footer .header--social .live-button i {
+        font-size: 13px;
+        margin-right: 6px; }
+
+#footer {
+  height: 120px; }
+
+#navigation .menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70px;
+  margin-top: -20px;
+  padding-bottom: 15px;
+  font-size: 28px;
+  padding-top: 20px;
+  border-bottom: 1px solid #6e6e6e;
+  cursor: pointer;
+  position: relative; }
+  #navigation .menu-item:hover .dropdown {
+    display: block; }
+  #navigation .menu-item i {
+    margin-left: 10px;
+    color: #c31719;
+    font-size: 25px; }
+  #navigation .menu-item:hover {
+    background: rgba(0, 0, 0, 0.001);
+    color: #c31719; }
+  #navigation .menu-item.active {
+    border-bottom: 6px solid #c31719; }
+  #navigation .menu-item .dropdown {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    display: none;
+    top: 100%;
+    height: 200px;
+    background: white;
+    box-shadow: 0 8px 40px 0 rgba(58, 95, 149, 0.1);
+    border-top: 1px solid #c31719;
+    padding: 0 10px 10px 10px !important; }
+    #navigation .menu-item .dropdown input {
+      height: 30px;
+      width: 100%;
+      font-size: 14px;
+      padding: 0 10px;
+      font-family: inherit;
+      background: whitesmoke;
+      border: 1px solid whitesmoke; }
+    #navigation .menu-item .dropdown ul.contains {
+      margin: 0;
+      height: calc(100% - 30px);
+      overflow: scroll; }
+      #navigation .menu-item .dropdown ul.contains::-webkit-scrollbar {
+        -webkit-appearance: none;
+        width: 7px; }
+      #navigation .menu-item .dropdown ul.contains::-webkit-scrollbar-thumb {
+        border-radius: 4px;
+        background-color: rgba(0, 0, 0, 0.5);
+        -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5); }
+      #navigation .menu-item .dropdown ul.contains li {
+        font-size: 14px;
+        line-height: 35px;
+        border-bottom: 1px solid whitesmoke;
+        padding: 0 10px;
+        color: black !important; }
+        #navigation .menu-item .dropdown ul.contains li:hover {
+          background: whitesmoke; }
+
+#municipal-council-component {
+  margin-top: 28px; }
+  #municipal-council-component .component-parties-list-horizontal {
+    margin-top: 32px; }
+
+#map-area {
+  height: 550px;
+  background: whitesmoke;
+  margin: 30px 0;
+  opacity: .2;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+  justify-content: center;
+  border: 1px dashed black; }
+
+#political-parties-table-component.centered .col-md-12,
+#winner-candidates-table-component.centered .col-md-12,
+#all-parties-component.centered .col-md-12 {
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+#political-parties-table-component .party,
+#winner-candidates-table-component .party,
+#all-parties-component .party {
+  height: 43px;
+  margin-bottom: 10px;
+  display: flex; }
+  #political-parties-table-component .party img,
+  #winner-candidates-table-component .party img,
+  #all-parties-component .party img {
+    height: 100%; }
+  #political-parties-table-component .party .col-md-4,
+  #winner-candidates-table-component .party .col-md-4,
+  #all-parties-component .party .col-md-4 {
+    height: 100%;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-weight: 600;
+    color: #000;
+    background: #f0f0f0; }
+  #political-parties-table-component .party i,
+  #winner-candidates-table-component .party i,
+  #all-parties-component .party i {
+    display: block;
+    font-size: 20px;
+    font-weight: 600;
+    height: 100%;
+    line-height: 43px;
+    padding: 0;
+    background: #353637;
+    position: relative;
+    font-style: normal; }
+    #political-parties-table-component .party i span,
+    #winner-candidates-table-component .party i span,
+    #all-parties-component .party i span {
+      position: absolute;
+      height: 20px;
+      font-size: 11px;
+      background: #efefef;
+      padding: 0 8px;
+      line-height: 20px;
+      right: -40px;
+      width: 50px;
+      text-align: center;
+      top: 10px;
+      color: black; }
+    #political-parties-table-component .party i[data-party=akp],
+    #winner-candidates-table-component .party i[data-party=akp],
+    #all-parties-component .party i[data-party=akp] {
+      background: #e39003; }
+    #political-parties-table-component .party i[data-party=mhp],
+    #winner-candidates-table-component .party i[data-party=mhp],
+    #all-parties-component .party i[data-party=mhp] {
+      background: #e70000; }
+    #political-parties-table-component .party i[data-party=chp],
+    #winner-candidates-table-component .party i[data-party=chp],
+    #all-parties-component .party i[data-party=chp] {
+      background: #a20200; }
+    #political-parties-table-component .party i[data-party=ip],
+    #winner-candidates-table-component .party i[data-party=ip],
+    #all-parties-component .party i[data-party=ip] {
+      background: #53b5e3; }
+    #political-parties-table-component .party i[data-party=hdp],
+    #winner-candidates-table-component .party i[data-party=hdp],
+    #all-parties-component .party i[data-party=hdp] {
+      background: #5301ad; }
+    #political-parties-table-component .party i[data-party=sp],
+    #winner-candidates-table-component .party i[data-party=sp],
+    #all-parties-component .party i[data-party=sp] {
+      background: #7a7b7c; }
+    #political-parties-table-component .party i[data-party=bbp],
+    #winner-candidates-table-component .party i[data-party=bbp],
+    #all-parties-component .party i[data-party=bbp] {
+      background: #10199e; }
+    #political-parties-table-component .party i[data-party=hp],
+    #winner-candidates-table-component .party i[data-party=hp],
+    #all-parties-component .party i[data-party=hp] {
+      background: #068431; }
+    #political-parties-table-component .party i[data-party=dsp],
+    #winner-candidates-table-component .party i[data-party=dsp],
+    #all-parties-component .party i[data-party=dsp] {
+      background: #1e6cb5; }
+    #political-parties-table-component .party i[data-party=dp],
+    #winner-candidates-table-component .party i[data-party=dp],
+    #all-parties-component .party i[data-party=dp] {
+      background: #a63f4a; }
+    #political-parties-table-component .party i[data-party=hp],
+    #winner-candidates-table-component .party i[data-party=hp],
+    #all-parties-component .party i[data-party=hp] {
+      background: #068431; }
+    #political-parties-table-component .party i[data-party=btp],
+    #winner-candidates-table-component .party i[data-party=btp],
+    #all-parties-component .party i[data-party=btp] {
+      background: #6c3319; }
+    #political-parties-table-component .party i[data-party=tkp],
+    #winner-candidates-table-component .party i[data-party=tkp],
+    #all-parties-component .party i[data-party=tkp] {
+      background: #fbe105; }
+    #political-parties-table-component .party i[data-party=vp],
+    #winner-candidates-table-component .party i[data-party=vp],
+    #all-parties-component .party i[data-party=vp] {
+      background: #c4c0c0; }
+    #political-parties-table-component .party i[data-party=ba],
+    #winner-candidates-table-component .party i[data-party=ba],
+    #all-parties-component .party i[data-party=ba] {
+      background: #353637; }
+
+#top-candidates-results {
+  padding: 15px;
+  background: #eff0f1; }
+  #top-candidates-results .col-xs {
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px; }
+    #top-candidates-results .col-xs strong {
+      font-size: 24px; }
+    #top-candidates-results .col-xs span {
+      font-size: 18px;
+      font-weight: 400; }
+    #top-candidates-results .col-xs .percantage {
+      height: 4px;
+      background: #e3e3e3;
+      width: 100%;
+      margin-top: 8px;
+      display: block;
+      position: relative; }
+      #top-candidates-results .col-xs .percantage span {
+        position: absolute;
+        right: 0;
+        top: -35px;
+        line-height: 35px;
+        font-size: 18px;
+        color: #474747;
+        font-weight: 600; }
+      #top-candidates-results .col-xs .percantage strong {
+        height: 4px;
+        display: block;
+        background: #63e17d; }
